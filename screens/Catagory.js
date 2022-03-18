@@ -4,16 +4,28 @@ import colors from "../JS/theme/colors";
 
 const exList = [
   {
-    name: "소상공인",
+    name: "서울특별시",
   },
   {
-    name: "코로나",
+    name: "부산시",
   },
   {
-    name: "안산시",
+    name: "대구시",
   },
   {
-    name: "인천",
+    name: "인천시",
+  },
+  {
+    name: "광주시",
+  },
+  {
+    name: "대전시",
+  },
+  {
+    name: "울산시",
+  },
+  {
+    name: "세종특별자치시",
   },
 ];
 
@@ -40,6 +52,7 @@ const CatagoryList = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 30px;
 `;
 
 const List = styled.TouchableOpacity`
