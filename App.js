@@ -36,7 +36,7 @@ export default function App() {
   const [isLogIn, setLogIn] = useState(false);
   useEffect(() => {
     // console.log(auth().currentUser);
-    //! EventListener을 넣어줘야함 firebase에서 상태가 변할때만 Listener를 넣을 수 있기 떄문이다.
+    //# EventListener을 넣어줘야함 firebase에서 상태가 변할때만 Listener를 넣을 수 있기 떄문이다.
     auth().onAuthStateChanged((user) => {
       if (user) {
         setLogIn(true);
