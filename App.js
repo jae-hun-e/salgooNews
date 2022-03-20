@@ -1,5 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Root from "./JS/navigators/Root";
 import * as Font from "expo-font";
 import { Asset } from "expo-asset";
@@ -7,6 +7,7 @@ import AppLoading from "expo-app-loading";
 import { Image, useColorScheme } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import { Ionicons } from "@expo/vector-icons";
+// import auth from "@react-native-firebase/auth";
 
 const loadFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
 
@@ -30,6 +31,11 @@ export default function App() {
   };
 
   const isDark = useColorScheme() === "dark";
+
+  // useEffect(() => {
+  //   console.log(auth().currentUser);
+  // }, []);
+
   if (!ready) {
     return (
       <AppLoading startAsync={startLoading} onFinish={onFinish} onError={console.error} />
