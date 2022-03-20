@@ -1,6 +1,7 @@
 import React from "react";
 import { FlatList, View } from "react-native";
 import styled from "styled-components/native";
+import colors from "../JS/theme/colors";
 
 const tmp = [
   {
@@ -23,12 +24,18 @@ const Home = () => (
   <View>
     <FlatList
       keyExtractor={(item) => item.id + ""}
-      ListHeaderComponent={() => <Text>Header</Text>}
+      ListHeaderComponent={(item) => (
+        <>
+          <Text>Header</Text>
+          <HeaderImg source={item.link} />
+        </>
+      )}
       data={tmp}
       renderItem={({ item }) => (
         <News>
           <Text>{item.title}</Text>
           <Info>{item.info}</Info>
+          <Img />
         </News>
       )}
       ListFooterComponent={() => <Text>Footer</Text>}
@@ -52,4 +59,13 @@ const Text = styled.Text`
 const Info = styled.Text`
   font-size: 10px;
   padding: 10px;
+`;
+
+const Img = styled.Image`
+  width: 100px;
+  height: 50px;
+`;
+
+const HeaderImg = styled(Img)`
+  background-color: ${colors.cardColor};
 `;

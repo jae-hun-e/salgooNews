@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "318119140518",
+    "project_id": "salgooapp",
+    "storage_bucket": "salgooapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318119140518:android:320bec0b46fc279e72e867",
+        "android_client_info": {
+          "package_name": "com.salgooapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318119140518-daj0g1c7veueh1qtd603qa6vqca5o62l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.salgooapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "318119140518-7slnc9ulp66kbqroh3vos1mg3f2musdt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3AWg8yLA5knpcJ_khn0YBDYH9CdOaz5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318119140518-7slnc9ulp66kbqroh3vos1mg3f2musdt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
