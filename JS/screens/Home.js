@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, View } from "react-native";
 import styled from "styled-components/native";
-import colors from "../JS/theme/colors";
+import colors from "../theme/colors";
 
 const tmp = [
   {

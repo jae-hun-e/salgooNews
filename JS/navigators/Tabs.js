@@ -1,10 +1,10 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "../../screens/Home";
+import Home from "../screens/Home";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-import Catagory from "../../screens/Catagory";
-import QandA from "../../screens/QandA";
+import Catagory from "../screens/Catagory";
+import QandA from "../screens/QandA";
 import colors from "../theme/colors";
 
 const NavTabs = createBottomTabNavigator();

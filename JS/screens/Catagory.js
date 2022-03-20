@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import colors from "../JS/theme/colors";
+import colors from "../theme/colors";
 
 const exList = [
   {

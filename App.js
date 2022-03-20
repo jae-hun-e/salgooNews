@@ -7,7 +7,8 @@ import AppLoading from "expo-app-loading";
 import { Image, useColorScheme } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import { Ionicons } from "@expo/vector-icons";
-// import auth from "@react-native-firebase/auth";
+import auth from "@react-native-firebase/auth";
+import LoginNav from "./JS/navigators/LoginNav";
 
 const loadFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
 
@@ -32,18 +33,23 @@ export default function App() {
 
   const isDark = useColorScheme() === "dark";
 
-  // useEffect(() => {
-  //   console.log(auth().currentUser);
-  // }, []);
+  const [isLogIn, setLogIn] = useState(false);
+  useEffect(() => {
+    // console.log(auth().currentUser);
+    //! EventListener을 넣어줘야함 firebase에서 상태가 변할때만 Listener를 넣을 수 있기 떄문이다.
+    auth().onAuthStateChanged((user) => {
+      if (user) {
+        setLogIn(true);
+      } else {
+        setLogIn(false);
+      }
+    });
+  }, []);
 
   if (!ready) {
     return (
       <AppLoading startAsync={startLoading} onFinish={onFinish} onError={console.error} />
     );
   }
-  return (
-    <NavigationContainer>
-      <Root />
-    </NavigationContainer>
-  );
+  return <NavigationContainer>{isLogIn ? <Root /> : <LoginNav />}</NavigationContainer>;
 }
