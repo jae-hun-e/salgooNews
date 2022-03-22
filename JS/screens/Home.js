@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, View } from "react-native";
 import styled from "styled-components/native";
-import colors from "../theme/colors";
+import { darkMode, softMode } from "../theme/colors";
 
 const tmp = [
   {
@@ -67,5 +67,5 @@ const Img = styled.Image`
 `;
 
 const HeaderImg = styled(Img)`
-  background-color: ${colors.cardColor};
+  background-color: ${darkMode.cardColor};
 `;

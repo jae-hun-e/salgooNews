@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import colors from "../theme/colors";
+import { darkMode, softMode } from "../theme/colors";
 
 const exList = [
   {
@@ -59,7 +59,7 @@ const List = styled.TouchableOpacity`
   width: 40%;
   height: 50px;
   text-align: center;
-  background-color: ${colors.cardColor};
+  background-color: ${darkMode.cardColor};
   margin: 10px;
   border-radius: 20px;
 

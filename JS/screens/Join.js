@@ -46,16 +46,17 @@ const Join = () => {
         autoCapitalize="none" //# 첫글자 대문자 유무
         autoCorrect={false} //# 자판 위에 자동 수정 유무
         returnKeyType="next" //# 완료 버튼 뭐로 띄울지
+        placeholderTextColor={"rgba(255, 255, 255, 0.7)"}
         onSubmitEditing={onSubmitEmailEditing} //# finish했을때 할 일 함수로 넣어줌
       />
       <TextInput
+        ref={passwordInput} //# refercese를 만들어서 다른곳에서 참조 가능하게 만들어줌
         value={password}
         onChangeText={(text) => setPassword(text)}
         secureTextEntry //# 비밀번호 안보이게
-        keyboardType="visible-password"
         placeholder="password"
         returnKeyType="done"
-        ref={passwordInput} //# refercese를 만들어서 다른곳에서 참조 가능하게 만들어줌
+        placeholderTextColor={"rgba(255, 255, 255, 0.7)"}
         onSubmitEditing={onSubmitPasswordEditing}
       />
       <Btn onPress={onSubmitPasswordEditing}>

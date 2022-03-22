@@ -32,16 +32,18 @@ export default function App() {
   };
 
   const isDark = useColorScheme() === "dark";
+  console.log(isDark);
 
-  const [isLogIn, setLogIn] = useState(false);
+  const [user, setUser] = useState(false);
   useEffect(() => {
-    // console.log(auth().currentUser);
+    console.log(auth().currentUser);
     //# EventListener을 넣어줘야함 firebase에서 상태가 변할때만 Listener를 넣을 수 있기 떄문이다.
-    auth().onAuthStateChanged((user) => {
+    return auth().onAuthStateChanged((user) => {
       if (user) {
-        setLogIn(true);
+        console.log(user);
+        setUser(true);
       } else {
-        setLogIn(false);
+        setUser(false);
       }
     });
   }, []);
@@ -51,5 +53,5 @@ export default function App() {
       <AppLoading startAsync={startLoading} onFinish={onFinish} onError={console.error} />
     );
   }
-  return <NavigationContainer>{isLogIn ? <Root /> : <LoginNav />}</NavigationContainer>;
+  return <NavigationContainer>{user ? <Root /> : <LoginNav />}</NavigationContainer>;
 }
