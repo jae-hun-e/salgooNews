@@ -1,24 +1,12 @@
 import React from "react";
-import { FlatList, View } from "react-native";
+import { FlatList, TextComponent, View } from "react-native";
 import styled from "styled-components/native";
 import { darkMode, softMode } from "../theme/colors";
-
-const tmp = [
-  {
-    id: 1,
-    title: "청년도약계좌…청년희망적금과 차이점은? 갈아타기·중복 가입 가능할까",
-    info: "윤석열 대통령 당선인이 공약으로 내걸었던 '청년도약계좌'에 관심이 쏠리며 지원대상과 기존의 청년희망적금과의 중복 가입이 가능할지 화제가 되고 있습니다.",
-    link: "https://www.salgoonews.com/news/articleView.html?idxno=17354",
-    img: "https://cdn.salgoonews.com/news/photo/202203/17354_41531_563.jpg",
-  },
-  {
-    id: 2,
-    title: "2022년 코로나19 가족돌봄비용 신청방법 (+증빙서류, 신청기간, 지원대상)",
-    info: "코로나 확진세가 증가함에 따라 돌봄이 긴급하게 돌봄이 필요한 인원이 증가하고있습니다. ",
-    link: "https://www.salgoonews.com/news/articleView.html?idxno=17314",
-    img: "https://cdn.salgoonews.com/news/photo/202203/17314_41485_3411.jpg",
-  },
-];
+import Swiper from "react-native-swiper";
+import { SCREEN_HEIGHT } from "../theme/screenSize";
+import { tmp } from "../tmpData/newsData";
+import { grantLink } from "../tmpData/grantLink";
+import Poster from "../components/Poster";
 
 const Home = () => (
   <View>
@@ -26,8 +14,24 @@ const Home = () => (
       keyExtractor={(item) => item.id + ""}
       ListHeaderComponent={(item) => (
         <>
-          <Text>Header</Text>
-          <HeaderImg source={item.link} />
+          <Text>지원 사이트들</Text>
+          <Swiper
+            loop
+            // autoplay={true}
+            autoplayTimeout={3}
+            containerStyle={{
+              width: "100%",
+              height: SCREEN_HEIGHT / 2,
+              marginBottom: 20,
+            }}
+          >
+            {grantLink?.map((news, idx) => (
+              <GrantSite>
+                <Title key={idx}>{news.siteName}</Title>
+                <Poster path={news.imgUrl} />
+              </GrantSite>
+            ))}
+          </Swiper>
         </>
       )}
       data={tmp}
@@ -66,6 +70,15 @@ const Img = styled.Image`
   height: 50px;
 `;
 
-const HeaderImg = styled(Img)`
-  background-color: ${darkMode.cardColor};
+const Title = styled.Text`
+  font-size: 25px;
+  margin: 15px;
+`;
+
+const GrantSite = styled.TouchableOpacity`
+  background-color: #ffecd2;
+  border-radius: 30px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 `;
