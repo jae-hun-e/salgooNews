@@ -12,7 +12,7 @@ const Home = () => (
   <View>
     <FlatList
       keyExtractor={(item) => item.id + ""}
-      ListHeaderComponent={(item) => (
+      ListHeaderComponent={(item, idx) => (
         <>
           <Text>지원 사이트들</Text>
           <Swiper
@@ -25,9 +25,9 @@ const Home = () => (
               marginBottom: 20,
             }}
           >
-            {grantLink?.map((news, idx) => (
-              <GrantSite>
-                <Title key={idx}>{news.siteName}</Title>
+            {grantLink?.map((news) => (
+              <GrantSite key={news.id}>
+                <Title>{news.siteName}</Title>
                 <Poster path={news.imgUrl} />
               </GrantSite>
             ))}

@@ -59,7 +59,7 @@ const List = styled.TouchableOpacity`
   width: 40%;
   height: 50px;
   text-align: center;
-  background-color: ${darkMode.cardColor};
+  background-color: ${darkMode.textColor};
   margin: 10px;
   border-radius: 20px;
 
