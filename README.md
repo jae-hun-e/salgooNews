@@ -30,7 +30,7 @@ Tabs
     - ListFooterComponent (footer 우리 정보, …)
 
 - 도시별 지원 사이트
-  Style : GirdLayout
+  Style : GirdLayout + 2D지도로 클릭
 
   - 서울시
     - 어느 구…

@@ -9,6 +9,7 @@ import { ThemeProvider } from "styled-components/native";
 import { Ionicons } from "@expo/vector-icons";
 import auth from "@react-native-firebase/auth";
 import LoginNav from "./JS/navigators/LoginNav";
+import Join from "./JS/screens/Join";
 
 const loadFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
 
@@ -53,5 +54,5 @@ export default function App() {
       <AppLoading startAsync={startLoading} onFinish={onFinish} onError={console.error} />
     );
   }
-  return <NavigationContainer>{user ? <Root /> : <LoginNav />}</NavigationContainer>;
+  return <NavigationContainer>{user ? <Root /> : <Join />}</NavigationContainer>;
 }
